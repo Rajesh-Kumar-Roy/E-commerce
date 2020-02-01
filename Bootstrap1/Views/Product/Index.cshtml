@@ -1,0 +1,120 @@
+﻿@model IEnumerable<Bootstrap1.Models.Product>
+
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<!-- Page info -->
+<div class="page-top-info">
+    <div class="container">
+        <h4>Product </h4>
+        <div class="site-pagination">
+            <a href="">Home</a> /
+            <a href="">Shop</a> /
+        </div>
+    </div>
+   
+</div>
+<hr />
+<!-- Page info end -->
+@*<h1>Index</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>*@
+@*<table class="table">
+    <thead>
+    <tr>
+
+        <th>
+            @Html.DisplayNameFor(model => model.Name)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Price)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Size)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ProductModel)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Description)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Image)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.CatagoriesId)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.SubCategoriesId)
+        </th>
+        <th></th>
+    </tr>
+    </thead>
+    <tbody>
+    @foreach (var item in Model)
+    {
+        <tr>
+
+            <td>
+                @Html.DisplayFor(modelItem => item.Name)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Price)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Size)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ProductModel)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Description)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Image)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Catagories.Name)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.SubCategories.SubName)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { /* id=item.PrimaryKey */ }) |
+                @Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ }) |
+                @Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ })
+            </td>
+        </tr>
+    }
+    </tbody>
+</table>*@
+<div class="container">
+    <div class="row">
+        @foreach (var item in Model)
+        {
+            var photoPath = "~/img/" + (item.Image ?? "55.jpg");
+            <div class="col-lg-3 col-sm-6">
+                <div class="product-item">
+                    <div class="pi-pic">
+                        <img src="@photoPath"asp-append-version="true" alt="" style="height: 380px;width: 664px">
+                        <div class="pi-links">
+                            <a href="#" class="add-card"><i class="flaticon-bag"></i><span>ADD TO CART</span></a>
+                            <a href="#" class="wishlist-btn"><i class="flaticon-heart"></i></a>
+                        </div>
+                    </div>
+                    <div class="pi-text">
+                        <h6>৳@item.Price</h6>
+                        <p>@item.Name </p>
+                    </div>
+                </div>
+            </div>
+
+        }
+    </div>
+    <div class="text-center w-100 pt-3">
+        <button class="site-btn sb-line sb-dark">LOAD MORE</button>
+    </div>
+</div>

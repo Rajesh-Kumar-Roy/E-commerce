@@ -1,0 +1,83 @@
+﻿@page
+@model IEnumerable<Bootstrap1.Models.ViewModel.ProductViewModel>
+
+<section class="top-letest-product-section">
+    <div class="container">
+        <div class="section-title">
+            <h2>Leatest Product</h2>
+        </div>
+        <div class="product-slider owl-carousel">
+            @foreach (var item in Model)
+            {
+
+                <div class="product-item">
+                    <div class="pi-pic">
+                        <img src="~/CustomCss/img/Image2/52.jpg" alt="">
+                        <div class="pi-links">
+                            <a href="#" class="add-card"><i class="flaticon-bag"></i><span></span></a>
+                            <a href="#" class="wishlist-btn"><i class="flaticon-heart"></i></a>
+                        </div>
+                    </div>
+                    <div class="pi-text">
+                        <h6>@item.Name</h6>
+                        <p>@item.Price</p>
+                    </div>
+                </div>
+            }
+
+            @*<div class="product-item">
+                <div class="pi-pic">
+                    <div class="tag-new"></div>
+                    <img src="~/CustomCss/img/Image2/04.jpg" alt="">
+                    <div class="pi-links">
+                        <a href="#" class="add-card"><i class="flaticon-bag"></i><span></span></a>
+                        <a href="#" class="wishlist-btn"><i class="flaticon-heart"></i></a>
+                    </div>
+                </div>
+                <div class="pi-text">
+                    <h6></h6>
+                    <p></p>
+                </div>
+            </div>
+            <div class="product-item">
+                <div class="pi-pic">
+                    <img src="~/CustomCss/img/Image2/24.jpg" alt="">
+                    <div class="pi-links">
+                        <a href="#" class="add-card"><i class="flaticon-bag"></i><span></span></a>
+                        <a href="#" class="wishlist-btn"><i class="flaticon-heart"></i></a>
+                    </div>
+                </div>
+                <div class="pi-text">
+                    <h6></h6>
+                    <p></p>
+                </div>
+            </div>
+            <div class="product-item">
+                <div class="pi-pic">
+                    <img src="~/CustomCss/img/Image2/56.jpg" alt="">
+                    <div class="pi-links">
+                        <a href="#" class="add-card"><i class="flaticon-bag"></i><span></span></a>
+                        <a href="#" class="wishlist-btn"><i class="flaticon-heart"></i></a>
+                    </div>
+                </div>
+                <div class="pi-text">
+                    <h6></h6>
+                    <p></p>
+                </div>
+            </div>
+            <div class="product-item">
+                <div class="pi-pic">
+                    <img src="~/CustomCss/img/Image2/03_005.jpg" alt="">
+                    <div class="pi-links">
+                        <a href="#" class="add-card"><i class="flaticon-bag"></i><span></span></a>
+                        <a href="#" class="wishlist-btn"><i class="flaticon-heart"></i></a>
+                    </div>
+                </div>
+                <div class="pi-text">
+                    <h6></h6>
+                    <p></p>
+                </div>
+            </div>*@
+        </div>
+    </div>
+</section>

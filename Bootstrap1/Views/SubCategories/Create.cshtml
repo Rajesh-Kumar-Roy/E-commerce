@@ -1,0 +1,62 @@
+﻿@model Bootstrap1.Models.ViewModel.SubCategoriesViewModel
+
+@{
+    ViewData["Title"] = "Create";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<div class="container">
+    <h1>Create</h1>
+
+    <h4>SubCategories</h4>
+    <hr />
+    <div class="row">
+        <div class="col-md-4">
+            <form enctype="multipart/form-data" asp-action="Create">
+                <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+              
+                <div class="form-group">
+                    <label asp-for="SubName" class="control-label"></label>
+                    <input asp-for="SubName" class="form-control" />
+                    <span asp-validation-for="SubName" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="Code" class="control-label"></label>
+                    <input asp-for="Code" class="form-control" />
+                    <span asp-validation-for="Code" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="Image"class="control-label"></label>
+                    <div class="custom-file">
+                        <input asp-for="Image"class="custom-file-input form-control"/>
+                        <label class="custom-file-label">Choice file....</label>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label asp-for="CategoriesId" class="control-label"></label>
+                    <select asp-for="CategoriesId" class="form-control"asp-items="@Model.GetCategories">
+                        <option>Select...</option>
+                    </select>
+                    <span asp-validation-for="CategoriesId" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <input type="submit" value="Create" class="btn btn-primary" />
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <div>
+        <a asp-action="Index">Back to List</a>
+    </div>
+</div>
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+    <script type="text/javascript">
+        $(document).ready(function() {
+            $('.custom-file-input').on("change", function() {
+                var fileName = $(this).val().split("\\").pop();
+                $(this).next('.custom-file-label').html(fileName);
+            });
+        });
+    </script>
+}

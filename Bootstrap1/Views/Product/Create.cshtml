@@ -1,0 +1,91 @@
+﻿@model Bootstrap1.Models.ViewModel.ProductViewModel
+
+@{
+    ViewData["Title"] = "Create";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<div class="container">
+    <h1 class="offset-1">Create</h1>
+
+    <h4 class="offset-1">Product</h4>
+    <hr />
+    <div class="row">
+        <div class="offset-1 col-md-10">
+            <form enctype="multipart/form-data" asp-action="Create">
+                <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+
+                <div class="form-group">
+                    <label asp-for="CatagoriesId" class="control-label"></label>
+                    
+                    <select asp-for="CatagoriesId"class="form-control"asp-items="Model.GetAllCategories">
+                        <option value="0">Select...</option>
+                    </select>
+                    <span asp-validation-for="CatagoriesId" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="SubCategoriesId" class="control-label"></label>
+                    <select asp-for="SubCategoriesId"class="form-control"asp-items="Model.GetAllSubCategories">
+                        <option value="0">Select...</option>
+                    </select>
+                    <span asp-validation-for="SubCategoriesId" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="Name" class="control-label"></label>
+                    <input asp-for="Name" class="form-control" />
+                    <span asp-validation-for="Name" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="Price" class="control-label"></label>
+                    <input asp-for="Price" class="form-control" />
+                    <span asp-validation-for="Price" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="Size" class="control-label"></label>
+                    <input asp-for="Size" class="form-control" />
+                    <span asp-validation-for="Size" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="ProductModel" class="control-label"></label>
+                    <input asp-for="ProductModel" class="form-control" placeholder="Product Model" />
+                    <span asp-validation-for="ProductModel" class="text-danger"></span>
+                </div>
+
+                <div class="form-group">
+                    <label asp-for="Image" class="control-label"></label>
+                    <div class="custom-file">
+                        <input asp-for="Image" class="form-control custom-file-input" />
+                        <label class="custom-file-label">Choice file...</label>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label asp-for="Description" class="control-label"></label>
+                    
+                    <textarea asp-for="Description"class="form-control"rows="3"></textarea>
+                    <span asp-validation-for="Description" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <input type="submit" value="Create" class="btn btn-primary" /> &nbsp;
+                    <a asp-action="Index" class="btn btn-warning">Back to List</a>
+                </div>
+            </form>
+        </div>
+        <div class="offset-1"></div>
+    </div>
+</div>
+<div>
+   
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+<script type="text/javascript">
+    $(document).ready(function () {
+        $('.custom-file-input').on("change",
+            function () {
+                var fileName = $(this).val().split("\\").pop();
+                $(this).next('.custom-file-label').html(fileName);
+            });
+    });
+</script>
+}

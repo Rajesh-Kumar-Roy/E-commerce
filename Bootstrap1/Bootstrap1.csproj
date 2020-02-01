@@ -1,0 +1,43 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp2.2</TargetFramework>
+    <AspNetCoreHostingModel>InProcess</AspNetCoreHostingModel>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Remove="Migrations\20191123171957_product_categroies_and_subCategories_added.cs" />
+    <Compile Remove="Migrations\20191123171957_product_categroies_and_subCategories_added.Designer.cs" />
+    <Compile Remove="Migrations\20191123172258_product_categroies_and_subCategories_added.cs" />
+    <Compile Remove="Migrations\20191123172258_product_categroies_and_subCategories_added.Designer.cs" />
+  </ItemGroup>
+
+
+  <ItemGroup>
+    <PackageReference Include="Font.Awesome" Version="5.11.2" />
+    <PackageReference Include="Microsoft.AspNetCore.App" />
+    <PackageReference Include="Microsoft.AspNetCore.Razor.Design" Version="2.2.0" PrivateAssets="All" />
+    <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="2.2.3" />
+  </ItemGroup>
+
+
+  <ItemGroup>
+    <Folder Include="Areas\Identity\Data\" />
+    <Folder Include="Areas\Identity\Pages\Account\Manage\" />
+    <Folder Include="wwwroot\CustomCss\css\" />
+    <Folder Include="wwwroot\CustomCss\icon-fonts\" />
+    <Folder Include="wwwroot\CustomCss\img\blog-thumbs\" />
+    <Folder Include="wwwroot\CustomCss\img\cart\" />
+    <Folder Include="wwwroot\CustomCss\img\icons\" />
+    <Folder Include="wwwroot\CustomCss\img\product\" />
+    <Folder Include="wwwroot\CustomCss\img\single-product\" />
+    <Folder Include="wwwroot\CustomCss\js\" />
+  </ItemGroup>
+
+
+  <ItemGroup>
+    <ProjectReference Include="..\Bootstrap.Manager\Bootstrap.Manager.csproj" />
+    <ProjectReference Include="..\Bootstrap\Bootstrapdb.csproj" />
+  </ItemGroup>
+
+</Project>

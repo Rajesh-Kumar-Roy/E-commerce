@@ -1,0 +1,125 @@
+﻿.topbar {
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-align: center;
+    align-items: center;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+    padding: .625rem 0;
+    font-size: .875rem
+}
+.topbar-dark .topbar-text, .topbar-dark .topbar-link {
+    color: rgba(255, 255, 255, 0.65)
+}
+
+    .topbar-dark .topbar-text > i, .topbar-dark .topbar-link > i {
+        color: #fe696a
+    }
+
+    .topbar-dark .topbar-text.text-muted, .topbar-dark .topbar-text > .text-muted, .topbar-dark .topbar-link.text-muted, .topbar-dark .topbar-link > .text-muted {
+        color: rgba(255, 255, 255, 0.45) !important
+    }
+
+    .topbar-dark .topbar-link:hover {
+        color: #fff
+    }
+
+    .topbar-dark .topbar-link.active {
+        color: #fff
+    }
+
+.topbar-dark .show .topbar-link {
+    color: #fff
+}
+
+.topbar-dark .cz-carousel [data-controls] {
+    color: rgba(255, 255, 255, 0.65)
+}
+
+    .topbar-dark .cz-carousel [data-controls]:hover {
+        color: #fff
+    }
+.czi-support::before {
+    content: "\e982"
+}
+
+.cz-carousel:not(.cz-controls-static) [data-controls] {
+    opacity: 0
+}
+
+.cz-carousel:not(.cz-controls-static) [data-controls='prev'] {
+    -webkit-transform: translateX(1rem);
+    transform: translateX(1rem)
+}
+
+.cz-carousel:not(.cz-controls-static) [data-controls='next'] {
+    -webkit-transform: translateX(-1rem);
+    transform: translateX(-1rem)
+}
+
+.cz-carousel:not(.cz-controls-static):hover [data-controls] {
+    -webkit-transform: none;
+    transform: none;
+    opacity: 1
+}
+.tns-outer {
+    padding: 0 !important
+}
+
+    .tns-outer [hidden] {
+        display: none !important
+    }
+
+    .tns-outer [aria-controls], .tns-outer [data-action] {
+        cursor: pointer
+    }
+.cz-carousel .tns-controls:focus {
+    outline: none
+}
+.czi-location::before {
+    content: "\e954"
+}
+
+/*next css*/
+.fa-shopping-cart:before {
+    content: "\f07a";
+}
+.fa {
+    display: inline-block;
+    font: normal normal normal 14px/1 FontAwesome;
+    font-size: inherit;
+    text-rendering: auto;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+#aa-header .aa-header-bottom .aa-header-bottom-area .aa-logo {
+    float: left;
+    margin-top: 4px;
+}
+#aa-header .aa-header-bottom .aa-header-bottom-area .aa-logo a {
+    font-family: "Raleway", sans-serif;
+    font-size: 28px;
+}
+#aa-header .aa-header-bottom .aa-header-bottom-area .aa-logo a:hover {  
+    color: #333;
+}
+#aa-header .aa-header-bottom .aa-header-bottom-area .aa-logo a > span {
+    display: inline-block;
+    float: left;
+    font-size: 50px;
+}
+#aa-header .aa-header-bottom .aa-header-bottom-area .aa-logo a p {
+    display: inline-block;
+    float: left;
+    font-weight: bold;
+    margin-bottom: 0;
+    margin-left: 5px;
+    margin-top: -5px;
+}
+#aa-header .aa-header-bottom .aa-header-bottom-area .aa-logo a p span {
+    display: block;
+    font-size: 12px;
+    font-weight: normal;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+}
